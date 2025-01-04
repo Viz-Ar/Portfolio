@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+    background-color: #333; /* Light black / dark gray */
+    color: white; /* Optional: Sets text color to white for contrast */
+    font-family: Arial, sans-serif; /* Optional: Sets a clean font style */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+.button-container {
+            text-align: center; /* Center the buttons on the page */
+            margin-top: 50px;
+        }
+
+        .button {
+            background-color: transparent; /* Dark gray button background */
+            color: white; /* White text */
+            border: none; /* Removes default border */
+            padding: 10px 20px; /* Padding for the button */
+            margin: 10px; /* Space between buttons */
+            font-size: 1em; /* Font size for text */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Changes cursor to pointer on hover */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+        }
+
+        .button:hover {
+            background-color: transparent; /* Lighter gray on hover */
+            color: #333; /* Light gray text on hover */
+        }
+        .search-container {
+            position: relative;
+            width: 300px; /* Adjust width as needed */
+            margin: 50px auto; /* Center the search bar on the page */
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 40px 10px 10px; /* Add padding to the right for the icon */
+            font-size: 16px;
+            border: 1px solid transparent; /* Light border */
+            border-radius: 20px; /* Rounded corners */
+            outline: none; /* Remove focus outline */
+            transition: border-color 0.3s ease; /* Smooth transition */
+        }
+
+        .search-input:focus {
+            border-color: #555; /* Darker border on focus */
+        }
+
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px; /* Position the icon inside the input field */
+            transform: translateY(-50%);
+            color: #555; /* Icon color */
+            font-size: 20px; /* Adjust size */
+            pointer-events: none; /* Prevent icon from capturing mouse clicks */
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://scontent.fktm21-1.fna.fbcdn.net/v/t1.6435-9/67587193_711376245941935_2121612281132351488_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeFgYvRwS2qr7VmeRZLfgO2it-vWky2OI2W369aTLY4jZezE4UrQDKdRlflxRXKufUI5pYHyLeb907TvGhUlLmPE&_nc_ohc=Cnoz_g999XIQ7kNvgE81jb5&_nc_zt=23&_nc_ht=scontent.fktm21-1.fna&_nc_gid=A2FpvoDmRwbcZLsiuHD67nD&oh=00_AYC2xNTLSMxzk4elisbqfQqOjOXmUQFYsMlIF3_DKzDXJQ&oe=678D1832'); /* Path to your image */
+            background-size: cover; /* Scale the image to cover the page */
+            background-position: below; /* below the image */
+            background-repeat: no-repeat; /* Prevent tiling */
+            height: 25vh; /* Full height of the viewport */
+            color: white; /* Optional: Set text color for contrast */
+            font-family: Arial, sans-serif; /* Optional: Set a clean font style */
+        }
+
+        h1 {
+            text-align: left;
+            margin-top: 1%;
+        }
+        .text-container {
+            margin-left: 50px; /* Position the text on the left side */
+            max-width: 400px; /* Limit the width of the text block */
+        }
+
+        .text-container h1 {
+            font-size: 3em; /* Larger font for the heading */
+            color: #FFD700; /* Gold color */
+            margin: 0 0 20px;
+        }
+
+        .text-container p {
+            font-size: 1.2em; /* Slightly larger font for the paragraph */
+            line-height: 1.6; /* Add spacing between lines */
+            color: #ffffff; /* White text color */
+        }
+        
+    .social-buttons {
+        display: flex; /* Use flexbox to align icons horizontally */
+        justify-content: center; /* Center the icons */
+        align-items: below; /* Vertically align icons */
+        gap: 20px; /* Space between the icons */
+        padding: 20px 0; /* Add padding around the icons */
+    }
+
+    .social-icon {
+        font-size: 30px; /* Icon size */
+        color: #333; /* Default color */
+        text-decoration: none; /* Remove underline */
+        transition: color 0.3s ease; /* Smooth transition for hover effect */
+    }
+
+    .social-icon:hover {
+        color: #FFD700; /* Yellow color on hover */
+    }
+    .footer {
+            text-align: center;
+            margin: 50px 0 20px;
+            font-size: 1em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button class="button"><a href="about.html" style="text-decoration: #333;">About</a></button>
+        <button class="button"><a href="Projects.html" style="text-decoration: #333;">Projects</a></button>
+        <button class="button"><a href="Contact.html" style="text-decoration: #333;">Contact</a></button>
+    </div>
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search...">
+        <i class="search-icon">&#128269;</i> <!-- Unicode for search icon -->
+    </div>
+    <div class="text-container" id="popup">
+        <h1>Rajiv Singh</h1>
+        <p>
+        Web Developer, Backend Developer as a Data Scientist to be Soon
+        </p>
+    </div> 
+    <!-- Include Font Awesome CDN for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="social-buttons">
+    <a href="https://www.facebook.com/saikoboe.rax" class="social-icon" target="_blank">
+        <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://wa.me/9815879153" class="social-icon" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/rajiv-singh-3ab011282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-icon" target="_blank">
+        <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://x.com/RajivSingh93839?t=qfrvai3o649sm-IriC-h8g&s=09" class="social-icon" target="_blank">
+        <i class="fab fa-x"></i> <!-- X (formerly Twitter) icon -->
+    </a>
+    <a href="https://www.instagram.com/rajiv___singh0/#" class="social-icon" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="mailto:singhrajiv18110922@gmail.com" class="social-icon" target="_blank">
+        <i class="fas fa-envelope"></i> <!-- Gmail icon (using envelope icon) -->
+    </a>
+    <a href="https://github.com/Viz-Ar" class="social-icon" target="_blank">
+        <i class="fab fa-github"></i> <!-- GitHub icon -->
+    </a>
+</div>
+
+<div class="footer">
+    © 2024 Rajiv Singh. All Rights Reserved.
+</div>
+</body>
+</html>

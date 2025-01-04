@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-color: #333333;  /* Light dark grey */
+        }
+       body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            width: 60%;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .highlight {
+            background-color: rebeccapurple;
+            font-weight: bold;
+        }
+        
+        body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-color: #333333;  /* Light dark grey */
+    }
+    body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #333333;
+            color: white;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        .skills {
+            margin: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .skill-button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #444;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
+        .skill-button:hover {
+            background-color: #555;
+        }
+        .skill-button img {
+            width: 24px;
+            height: 24px;
+        }
+        #scrollUpBtn {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed/sticky position */
+            bottom: 20px; /* Place the button at the bottom of the page */
+            right: 30px; /* Place the button 30px from the right */
+            z-index: 99; /* Make sure it does not overlap */
+            border: none; /* Remove borders */
+            outline: none; /* Remove outline */
+            background-color: #0f0e0e00; /* Set a background color */
+            color: rgb(207, 39, 185); /* Text color */
+            cursor: pointer; /* Add a mouse pointer on hover */
+            padding: 15px; /* Some padding */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        #scrollUpBtn:hover {
+            background-color: #555; /* Add a dark-grey background on hover */
+        }
+       
+    </style>
+</head>
+<body>
+    <div>
+    <h1>About</h1>
+    <p>
+        A <span class="highlight">Software Engineering</span> student learns to design, develop, and maintain <span class="highlight">software systems</span>.  
+        Key skills include <span class="highlight">coding</span>, <span class="highlight">problem-solving</span>, and understanding <span class="highlight">software architecture</span>.  
+        Collaboration, critical thinking, and <span class="highlight">project management</span> are essential for success in this field.
+
+        Currently I am Studying at <span class="highlight"> School Of Engineering, Pokhara University</span>. I'm enrolled in Software Engineering And i'm highly enthusiactic in joining the feild of <span class="highlight"> Data Science and Machine Learning.</span>
+
+    </p>
+    <div>    <button onclick="scrollToTop()" id="scrollUpBtn" title="Go to top">Top</button>
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("scrollUpBtn").style.display = "block";
+            } else {
+                document.getElementById("scrollUpBtn").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function scrollToTop() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script></div>
+    <h1>My Skills</h1>
+    <div class="skills">
+        <button class="skill-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python"> Python
+        </button>
+        <button class="skill-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Java"> Java
+        </button>
+        <button class="skill-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png" alt="React"> React
+        </button>
+        <button class="skill-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" alt="HTML"> HTML
+        </button>
+        <button class="skill-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/919/919826.png" alt="CSS"> CSS
+        </button>
+        <button class="skill-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript"> JavaScript
+        </button>
+        <button class="skill-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="C"> C
+        </button>
+        <button class="skill-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="C++"> C++
+        </button>
+        <button class="skill-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/919/919852.png" alt="Django"> Django
+        </button>
+        <button class="skill-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/919/919829.png" alt="PHP"> PHP
+        </button>
+        <button class="skill-button">
+            <img src="https://th.bing.com/th/id/OIP.FSRDcZvie0Z8it66YWVJVAHaHU?rs=1&pid=ImgDetMain" alt="MySQL"> MySQL
+        </button>
+        
+    </div>
+</div>
+<h1>Education</h1>
+<p>
+   SEE:  <span class="highlight">Shree Mahendra  Secondary School</span> <br>
+</p>
+<p>
+    +2:  <span class="highlight">Kumudini Homes  Secondary School</span> <br>
+</p>
+<p>
+    Bachelor:  <span class="highlight">School Of Engineering, Pokhara University in <span class="highlight">Software Engineering</span></span> <br>
+</p>
+<h1>Experience</h1>
+<p>
+    <span class="highlight">Intern</span> at <span class="highlight">Nepal Telecom</span> <br>
+</body>
+   </html>

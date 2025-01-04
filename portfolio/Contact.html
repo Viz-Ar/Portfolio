@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+     
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://th.bing.com/th/id/R.18296778ec9f1b388a6f80c3e5987a88?rik=HR1q%2f55lqCdrqg&riu=http%3a%2f%2fdonteatalone.com%2fwp-content%2fuploads%2f2015%2f11%2fman-waiting-on-bench.png&ehk=JxxAjTBgbV1j23hGlJSOqACbGi23%2bgh52afemDQQYPQ%3d&risl=&pid=ImgRaw&r=0'); /* Path to your image */
+            background-size: cover; /* Scale the image to cover the page */
+            background-position: center; /* below the image */
+            background-repeat: no-repeat; /* Prevent tiling */
+            height: 25vh; /* Full height of the viewport */
+            color: white; /* Optional: Set text color for contrast */
+            font-family: Arial, sans-serif; /* Optional: Set a clean font style */
+        }
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+            font-family: 'Poppins', sans-serif;
+        }
+        .clock {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            border: 12px solid #0077b6;
+            border-radius: 50%;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .clock::before {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: #023e8a;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .hand {
+            position: absolute;
+            width: 8px;
+            height: 160px;
+            background: #e63946;
+            top: 50%;
+            left: 50%;
+            transform-origin: bottom center;
+            transform: translate(-50%, -100%) rotate(0deg);
+            border-radius: 6px;
+        }
+        .countdown {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.2em;
+            color: #333;
+            text-align: center;
+            line-height: 1.5em;
+        }
+        .label {
+            font-size: 0.7em;
+            color: #777;
+        }
+       
+    </style>
+</head>
+<body>
+    <h1>This page is still under developing phase, very sooner it will be completed </h1>
+    <div class="clock">
+        <div class="hand" id="hand"></div>
+        <div class="countdown" id="countdown">
+            <div><span id="days">30</span> <span class="label">Days</span></div>
+            <div><span id="hours">23</span> <span class="label">Hours</span></div>
+            <div><span id="minutes">59</span> <span class="label">Minutes</span></div>
+            <div><span id="seconds">60</span> <span class="label">Seconds</span></div>
+        </div>
+    </div>
+
+    <script>
+        const handEl = document.getElementById('hand');
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+
+        // Set target countdown date (adjust as needed)
+        const targetDate = new Date("2024-12-31T23:59:59").getTime();
+
+        function updateClock() {
+            const now = new Date().getTime();
+            const timeLeft = targetDate - now;
+
+            if (timeLeft <= 0) {
+                clearInterval(interval);
+                document.querySelector('.countdown').innerHTML = "Time's Up!";
+                return;
+            }
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            daysEl.textContent = days < 10 ? '0' + days : days;
+            hoursEl.textContent = hours < 10 ? '0' + hours : hours;
+            minutesEl.textContent = minutes < 10 ? '0' + minutes : minutes;
+            secondsEl.textContent = seconds < 10 ? '0' + seconds : seconds;
+
+            // Rotate the hand anticlockwise based on remaining seconds
+            const totalSeconds = (targetDate - now) / 1000;
+            const rotation = -(360 / 60) * (totalSeconds % 60);
+            handEl.style.transform = `translate(-50%, -100%) rotate(${rotation}deg)`;
+        }
+
+        // Update every second
+        const interval = setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
