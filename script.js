@@ -174,3 +174,26 @@ sendBtn.addEventListener('click', handleSend);
 chatInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') handleSend();
 });
+
+// --- Music Player ---
+const bgMusic = document.getElementById('bg-music');
+const musicToggle = document.getElementById('music-toggle');
+const musicLabel = document.getElementById('music-label');
+let isPlaying = false;
+
+musicToggle.addEventListener('click', () => {
+    if (isPlaying) {
+        bgMusic.pause();
+        musicToggle.classList.remove('playing');
+        musicLabel.textContent = 'Lofi Vibes 🎵';
+        isPlaying = false;
+    } else {
+        bgMusic.play().then(() => {
+            musicToggle.classList.add('playing');
+            musicLabel.textContent = 'Now Playing ♪';
+            isPlaying = true;
+        }).catch(() => {
+            musicLabel.textContent = 'Click to Play 🎵';
+        });
+    }
+});
