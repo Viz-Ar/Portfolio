@@ -53,6 +53,49 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// --- Hamburger Mobile Menu ---
+const hamburger    = document.getElementById('hamburger');
+const hamburgerIcon = document.getElementById('hamburger-icon');
+const navLinks     = document.querySelector('.nav-links');
+const navOverlay   = document.getElementById('nav-overlay');
+
+function openMobileNav() {
+    navLinks.classList.add('open');
+    navOverlay.classList.add('active');
+    hamburger.classList.add('open');
+    hamburgerIcon.classList.replace('fa-bars', 'fa-times');
+    document.body.style.overflow = 'hidden'; // prevent background scroll
+}
+
+function closeMobileNav() {
+    navLinks.classList.remove('open');
+    navOverlay.classList.remove('active');
+    hamburger.classList.remove('open');
+    hamburgerIcon.classList.replace('fa-times', 'fa-bars');
+    document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', () => {
+    if (navLinks.classList.contains('open')) {
+        closeMobileNav();
+    } else {
+        openMobileNav();
+    }
+});
+
+// Close when a nav link is tapped
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMobileNav);
+});
+
+// Close when backdrop overlay is tapped
+navOverlay.addEventListener('click', closeMobileNav);
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMobileNav();
+});
+
 // --- Typewriter Effect ---
 const typeWriterElement = document.querySelector('.typewriter');
 const textSets = {
